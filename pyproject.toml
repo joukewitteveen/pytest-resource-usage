@@ -1,6 +1,6 @@
 [project]
 name = "pytest_resource_usage"
-version = "0.0.1"
+version = "0.1.0"
 authors = [
     { name="Jouke Witteveen", email="j.witteveen@gmail.com" },
 ]
@@ -28,12 +28,6 @@ classifiers = [
 report_duration = "pytest_resource_usage.duration"
 report_tracemalloc = "pytest_resource_usage.tracemalloc"
 report_resource_usage = "pytest_resource_usage.report"
-
-[tool.pytest.ini_options]
-markers = [
-    "report_duration: report duration of tests",
-    "report_tracemalloc: report peak memory usage of tests",
-]
 
 [build-system]
 requires = ["flit_core>=3.5"]

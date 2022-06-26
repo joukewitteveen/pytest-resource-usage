@@ -3,6 +3,9 @@ import tracemalloc
 import pytest
 
 
+MARKER_NAME = "report_tracemalloc"
+
+
 def format_peak_memory(size):
     """Human-readable memory usage message"""
     for unit in [" bytes", "kB", "MB", "GB", "TB", "PB", "EB", "ZB"]:
@@ -23,7 +26,7 @@ def pytest_runtest_call(item):
     finished only if memory allocations were not being traced already
     before the test is run.
     """
-    if "report_tracemalloc" not in item.keywords:
+    if MARKER_NAME not in item.keywords:
         yield
         return
 
@@ -39,3 +42,10 @@ def pytest_runtest_call(item):
         tracemalloc.stop()
 
     item.add_report_section("call", "resource", format_peak_memory(peak_size))
+
+
+def pytest_configure(config):
+    """Register the marker"""
+    config.addinivalue_line(
+        "markers", f"{MARKER_NAME}: report peak memory usage of tests."
+    )
