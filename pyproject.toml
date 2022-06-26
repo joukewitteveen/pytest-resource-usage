@@ -1,0 +1,40 @@
+[project]
+name = "pytest_resource_usage"
+version = "0.0.1"
+authors = [
+    { name="Jouke Witteveen", email="j.witteveen@gmail.com" },
+]
+description = "Pytest plugin for reporting running time and peak memory usage"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "pytest",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Pytest",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Testing",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/joukewitteveen/pytest-resource-usage"
+"Bug Tracker" = "https://github.com/joukewitteveen/pytest-resource-usage/issues"
+
+[project.entry-points.pytest11]
+report_duration = "pytest_resource_usage.duration"
+report_tracemalloc = "pytest_resource_usage.tracemalloc"
+report_resource_usage = "pytest_resource_usage.report"
+
+[tool.pytest.ini_options]
+markers = [
+    "report_duration: report duration of tests",
+    "report_tracemalloc: report peak memory usage of tests",
+]
+
+[build-system]
+requires = ["flit_core>=3.5"]
+build-backend = "flit_core.buildapi"
