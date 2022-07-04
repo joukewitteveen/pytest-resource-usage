@@ -19,7 +19,7 @@ def format_peak_memory(size):
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_call(item):
-    """Measure peak allocated memory size on a test run
+    """Measure peak allocated memory size of a test run
 
     We only measure if the `report_tracemalloc` marker is present.
     Tracing of memory allocations will be stopped after the test is
