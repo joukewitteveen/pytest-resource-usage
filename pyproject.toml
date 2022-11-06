@@ -1,6 +1,6 @@
 [project]
-name = "pytest_resource_usage"
-version = "0.2.0"
+name = "pytest-resource-usage"
+version = "1.0.0"
 authors = [
     { name="Jouke Witteveen", email="j.witteveen@gmail.com" },
 ]
@@ -34,5 +34,5 @@ report_tracemalloc = "pytest_resource_usage.tracemalloc"
 report_uss = "pytest_resource_usage.uss"
 
 [build-system]
-requires = ["flit_core>=3.5"]
+requires = ["flit_core>=3.8"]
 build-backend = "flit_core.buildapi"

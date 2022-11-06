@@ -56,7 +56,7 @@ Running the above tests produces the following `pytest` output.
 
 ```
 ================================================================ test session starts =================================================================
-plugins: pytest_resource_usage-0.2.0
+plugins: pytest-resource-usage-1.0.0
 collected 5 items                                                                                                                                    
 
 tests/test_readme.py .....                                                                                                                     [100%]
